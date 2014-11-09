@@ -1,10 +1,14 @@
 <?php
 
-define('DRUPAL_ROOT', realpath ('../../../..'));
+/**
+ * @file
+ * Bootstraped Drupal for fast ajax call.
+ */
+
+define('DRUPAL_ROOT', realpath('../../../..'));
 require_once DRUPAL_ROOT . '/includes/bootstrap.inc';
 drupal_bootstrap(DRUPAL_BOOTSTRAP_DATABASE);
-//drupal_bootstrap(DRUPAL_BOOTSTRAP_SESSION);
-
+// drupal_bootstrap(DRUPAL_BOOTSTRAP_SESSION);
 
 $query = db_select('users', 'u')
   ->condition('u.uid', 0, '<>')
